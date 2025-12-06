@@ -33,8 +33,8 @@ userSchema.pre("save", async function (next) {
 
 // password comparison helper
 userSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
   console.log(password);
+  return bcrypt.compare(password, this.password);
 };
 
 const User = model("User", userSchema);
